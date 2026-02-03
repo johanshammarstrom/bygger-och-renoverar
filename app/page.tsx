@@ -81,32 +81,83 @@ export default function LandingPage() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-24 bg-slate-50 px-6 text-left">
-        <div className="max-w-6xl mx-auto bg-slate-900 rounded-3xl overflow-hidden grid md:grid-cols-2 shadow-2xl">
-          <div className="p-12 text-white">
-            <h2 className="text-3xl font-bold mb-8">Kontakta oss</h2>
-            <div className="space-y-6">
+      <section id="contact" className="py-16 md:py-24 bg-slate-50 px-4 md:px-6 text-left">
+        <div className="max-w-6xl mx-auto bg-slate-900 rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2 shadow-2xl">
+
+          {/* VÄNSTER DEL (Svart bakgrund) */}
+          <div className="p-8 md:p-12 text-white">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 italic text-orange-500">Kontakta oss</h2>
+            <div className="space-y-8">
+
+              {/* TELEFON */}
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-orange-600 rounded-full"><Phone size={24} /></div>
-                <div><p className="text-sm text-slate-400 font-bold">Aliaksei Patonich</p><a href="tel:0708399749" className="text-xl font-bold hover:text-orange-500">070-839 97 49</a></div>
+                <div className="p-3 bg-orange-600 rounded-full shrink-0">
+                  <Phone size={24} className="text-white" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">Aliaksei Patonich</p>
+                  <a href="tel:0708399749" className="text-lg md:text-xl font-bold hover:text-orange-500 transition break-words">
+                    070-839 97 49
+                  </a>
+                </div>
               </div>
+
+              {/* E-POST */}
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-orange-600 rounded-full"><Mail size={24} /></div>
-                <div><p className="text-sm text-slate-400 font-bold">E-post</p><a href="mailto:info@byggochrenoverar.se" className="text-xl font-bold hover:text-orange-500">info@byggochrenoverar.se</a></div>
+                <div className="p-3 bg-orange-600 rounded-full shrink-0">
+                  <Mail size={24} className="text-white" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">E-post</p>
+                  <a href="mailto:info@byggochrenoverar.se" className="text-lg md:text-xl font-bold hover:text-orange-500 transition block truncate sm:overflow-visible sm:whitespace-normal">
+                    info@byggochrenoverar.se
+                  </a>
+                </div>
               </div>
+
             </div>
           </div>
-          <div className="p-12 bg-white">
-            <h3 className="text-2xl font-bold mb-6">Begär offert</h3>
+
+          {/* HÖGER DEL (Vit bakgrund) */}
+          <div className="p-8 md:p-12 bg-white">
+            <h3 className="text-xl md:text-2xl font-bold mb-6 italic underline decoration-orange-600">Begär offert</h3>
             <form className="space-y-4">
-              <input type="text" placeholder="Namn" className="w-full p-4 bg-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-orange-600" />
-              <textarea placeholder="Beskriv ditt projekt..." rows={4} className="w-full p-4 bg-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-orange-600"></textarea>
-              <button type="button" className="w-full bg-orange-600 text-white font-bold py-4 rounded-xl hover:bg-orange-700 transition">Skicka förfrågan</button>
+              <input
+                type="text"
+                placeholder="Namn"
+                className="w-full p-4 bg-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-orange-600 text-sm md:text-base"
+              />
+              <textarea
+                placeholder="Beskriv ditt projekt..."
+                rows={4}
+                className="w-full p-4 bg-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-orange-600 text-sm md:text-base"
+              ></textarea>
+              <button
+                type="button"
+                className="w-full bg-orange-600 text-white font-bold py-4 rounded-xl hover:bg-orange-700 transition shadow-lg active:scale-95"
+              >
+                Skicka förfrågan
+              </button>
             </form>
           </div>
         </div>
       </section>
-      <footer className="py-12 border-t text-center text-slate-500 text-sm italic">© 2026 Bygger och Renoverar Stockholm.</footer>
+
+      {/* FOOTER */}
+      <footer className="py-16 border-t bg-white flex flex-col items-center px-6">
+        <div className="relative h-12 w-48 mb-6 opacity-80 grayscale">
+          <Image
+            src="/logo.png"
+            alt="Bygger och Renoverar Stockholm"
+            fill
+            className="object-contain"
+          />
+        </div>
+        <p className="text-slate-500 text-xs md:text-sm font-medium text-center max-w-xs leading-relaxed">
+          © 2026 Bygger och Renoverar Stockholm. <br className="md:hidden" />
+          Alla rättigheter förbehållna.
+        </p>
+      </footer>
     </main>
   );
 }
