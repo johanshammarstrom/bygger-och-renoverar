@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import {
   Phone, Mail, CheckCircle, ShieldCheck,
-  Hammer, Droplets, Utensils, WallTower,
+  Hammer, Droplets, Utensils, BrickWall,
   Home, TreePine, Paintbrush, HardHat,
   ChevronRight
 } from 'lucide-react';
@@ -11,7 +11,7 @@ export default function LandingPage() {
   const services = [
     { title: "Badrumsrenovering", desc: "Vi skapar moderna och hållbara badrum med certifierade hantverkare och fast prisoffert.", icon: <Droplets className="text-orange-600" /> },
     { title: "Köksrenovering", desc: "Få ett funktionellt och stilrent kök, skräddarsytt efter dina behov och önskemål.", icon: <Utensils className="text-orange-600" /> },
-    { title: "Väggarbeten", desc: "Vi bygger, renoverar och putsar väggar för att ge ditt hem rätt form, stil och finish.", icon: <WallTower className="text-orange-600" /> },
+    { title: "Väggarbeten", desc: "Vi bygger, renoverar och putsar väggar för att ge ditt hem rätt form, stil och finish.", icon: <BrickWall className="text-orange-600" /> },
     { title: "Bygga altan & terrass", desc: "Vi designar och bygger altaner som förvandlar din uteplats till ett stilfullt extra vardagsrum.", icon: <TreePine className="text-orange-600" /> },
     { title: "Lerputs", desc: "Naturlig skönhet med lerputs. Ge dina väggar ett varmt och levande utseende – även för spisar.", icon: <Paintbrush className="text-orange-600" /> },
     { title: "Nybyggnation & Attefallshus", desc: "Vi bygger moderna hus och nyckelfärdiga Attefallshus med fokus på kvalitet och trygghet.", icon: <Home className="text-orange-600" /> },
