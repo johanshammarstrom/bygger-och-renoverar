@@ -42,7 +42,7 @@ export default function AltanPage() {
                     <Link href="/" className="inline-flex items-center text-orange-500 mb-6 font-bold hover:underline">
                         <ArrowLeft size={20} className="mr-2" /> Tillbaka
                     </Link>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4">Bygga Altan & Terrass</h1>
+                    <h1 className="text-4xl md:text-3xl md:text-6xl font-bold mb-4">Bygga Altan & Terrass</h1>
                     <p className="text-xl text-slate-200 mb-8 max-w-2xl mx-auto italic">Din drömaltan börjar här – vi bygger hållbara träaltaner och terrasser i Stockholm.</p>
                 </div>
             </section>

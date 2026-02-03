@@ -34,7 +34,7 @@ export default function ConstructionPage() {
                     <Link href="/" className="inline-flex items-center text-orange-500 mb-6 font-bold hover:text-orange-400 transition">
                         <ArrowLeft size={20} className="mr-2" /> Tillbaka till startsidan
                     </Link>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 uppercase tracking-tight">Nybyggnation & Attefallshus</h1>
+                    <h1 className="text-4xl md:text-3xl md:text-6xl font-bold mb-4 uppercase tracking-tight">Nybyggnation & Attefallshus</h1>
                     <p className="text-xl text-slate-200 mb-8 leading-relaxed">Bygg ditt drömhus med oss – moderna hus och nyckelfärdiga Attefallshus i Stockholm med fokus på kvalitet och hållbarhet.</p>
                     <a href="#contact" className="bg-orange-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-700 transition shadow-xl">Få offert idag</a>
                 </div>

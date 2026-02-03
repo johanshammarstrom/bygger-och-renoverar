@@ -51,7 +51,7 @@ export default function BadrumPage() {
                     <Link href="/" className="inline-flex items-center text-orange-500 mb-6 font-bold hover:underline">
                         <ArrowLeft size={20} className="mr-2" /> Tillbaka
                     </Link>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 uppercase">Badrumsrenovering</h1>
+                    <h1 className="text-4xl md:text-3xl md:text-text-3xl md:text-6xl6xl font-bold mb-4 uppercase">Badrumsrenovering</h1>
                     <p className="text-xl text-slate-200 mb-8 italic">Förvandla ditt badrum – tryggt, snyggt och i tid.</p>
                     <a href="#contact" className="bg-orange-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-700 transition shadow-xl">Boka Offertförfrågan</a>
                 </div>
