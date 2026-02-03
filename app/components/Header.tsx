@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image'; // Importera Image
+import Image from 'next/image'; // Importera Imageeeeeeeee
 import { Phone, Menu, X } from 'lucide-react';
 
 export default function Header() {
