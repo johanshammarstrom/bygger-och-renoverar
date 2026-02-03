@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 export default function AltanPage() {
-    const [activeFaq, setActiveFaq] = useState(null);
+    const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
     const steps = [
         { title: "Planering & design", desc: "Bestäm storlek, placering och eventuella räcken." },
