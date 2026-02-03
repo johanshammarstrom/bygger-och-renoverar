@@ -14,10 +14,12 @@ export default function LandingPage() {
   const services = [
     { title: "Badrumsrenovering", desc: "Vi skapar moderna och hållbara badrum med certifierade hantverkare och fast prisoffert.", icon: <Droplets size={32} /> },
     { title: "Köksrenovering", desc: "Få ett funktionellt och stilrent kök, skräddarsytt efter dina behov och önskemål.", icon: <Utensils size={32} /> },
-    { title: "Väggarbeten", desc: "Vi bygger, renoverar och putsar väggar för att ge ditt hem rätt form, stil och finish.", icon: <BrickWall size={32} /> },
     { title: "Bygga altan & terrass", desc: "Vi designar och bygger altaner som förvandlar din uteplats till ett stilfullt extra vardagsrum.", icon: <TreePine size={32} /> },
-    { title: "Lerputs", desc: "Naturlig skönhet med lerputs. Ge dina väggar ett varmt och levande utseende – även för spisar.", icon: <Paintbrush size={32} /> },
     { title: "Nybyggnation & Attefallshus", desc: "Vi bygger moderna hus och nyckelfärdiga Attefallshus med fokus på kvalitet och trygghet.", icon: <Home size={32} /> },
+    /* De dolda tjänsterna sparas nedan:
+    { title: "Väggarbeten", desc: "Vi bygger, renoverar och putsar väggar för att ge ditt hem rätt form, stil och finish.", icon: <BrickWall size={32} /> },
+    { title: "Lerputs", desc: "Naturlig skönhet med lerputs. Ge dina väggar ett varmt och levande utseende – även för spisar.", icon: <Paintbrush size={32} /> },
+    */
   ];
 
   return (
@@ -38,20 +40,42 @@ export default function LandingPage() {
       </section>
 
       {/* SERVICES SECTION */}
-      <section id="services" className="py-24 px-6 max-w-7xl mx-auto text-left">
-        <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">Våra Tjänster</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
+        {/* DET ÄR DENNA DEL DU SKA UPPDATERA */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Våra Tjänster</h2>
+          <div className="w-24 h-1.5 bg-orange-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((s, i) => {
             const content = (
-              <div className="p-8 border border-slate-100 rounded-2xl hover:shadow-xl transition bg-white h-full cursor-pointer group">
-                <div className="mb-4 p-3 bg-orange-50 w-fit rounded-lg group-hover:bg-orange-600 group-hover:text-white transition">{s.icon}</div>
+              <div className="p-8 border border-slate-100 rounded-2xl hover:shadow-xl transition duration-300 bg-white group h-full cursor-pointer">
+                <div className="mb-4 p-3 bg-orange-50 w-fit rounded-lg group-hover:bg-orange-600 group-hover:text-white transition">
+                  {s.icon}
+                </div>
                 <h3 className="text-xl font-bold mb-3">{s.title}</h3>
-                <p className="text-slate-600 mb-4">{s.desc}</p>
-                {(s.title === "Nybyggnation & Attefallshus" || s.title === "Bygga altan & terrass") && <span className="text-orange-600 font-bold">Läs mer →</span>}
+                <p className="text-slate-600 leading-relaxed">{s.desc}</p>
+
+                {/* Denna rad visar nu "Läs mer" på ALLA kort */}
+                <span className="text-orange-600 text-sm font-bold mt-4 block group-hover:translate-x-2 transition-transform">
+                  Läs mer →
+                </span>
               </div>
             );
-            let href = s.title === "Nybyggnation & Attefallshus" ? "/nybyggnation" : s.title === "Bygga altan & terrass" ? "/altan" : "";
-            return href ? <Link key={i} href={href}>{content}</Link> : <div key={i}>{content}</div>;
+
+            // Din befintliga länk-logik
+            let href = "";
+            if (s.title === "Nybyggnation & Attefallshus") href = "/nybyggnation";
+            if (s.title === "Bygga altan & terrass") href = "/altan";
+            if (s.title === "Badrumsrenovering") href = "/badrum";
+            if (s.title === "Köksrenovering") href = "/kok";
+
+            return href ? (
+              <Link key={i} href={href}>{content}</Link>
+            ) : (
+              <div key={i}>{content}</div>
+            );
           })}
         </div>
       </section>
