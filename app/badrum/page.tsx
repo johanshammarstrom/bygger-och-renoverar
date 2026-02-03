@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 export default function BadrumPage() {
-    const [activeFaq, setActiveFaq] = useState(null);
+    const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
     const steps = [
         { title: "Konsultation & offert", desc: "Vi gör en platsbesiktning och ger en detaljerad offert." },
