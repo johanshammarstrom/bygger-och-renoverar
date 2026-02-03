@@ -3,25 +3,24 @@ import Image from 'next/image';
 import {
   Phone, Mail, CheckCircle, ShieldCheck,
   Hammer, Droplets, Utensils, BrickWall,
-  Home, TreePine, Paintbrush, HardHat,
-  ChevronRight
+  Home, TreePine, Paintbrush, HardHat
 } from 'lucide-react';
 
 export default function LandingPage() {
   const services = [
-    { title: "Badrumsrenovering", desc: "Vi skapar moderna och hållbara badrum med certifierade hantverkare och fast prisoffert.", icon: <Droplets className="text-orange-600" /> },
-    { title: "Köksrenovering", desc: "Få ett funktionellt och stilrent kök, skräddarsytt efter dina behov och önskemål.", icon: <Utensils className="text-orange-600" /> },
-    { title: "Väggarbeten", desc: "Vi bygger, renoverar och putsar väggar för att ge ditt hem rätt form, stil och finish.", icon: <BrickWall className="text-orange-600" /> },
-    { title: "Bygga altan & terrass", desc: "Vi designar och bygger altaner som förvandlar din uteplats till ett stilfullt extra vardagsrum.", icon: <TreePine className="text-orange-600" /> },
-    { title: "Lerputs", desc: "Naturlig skönhet med lerputs. Ge dina väggar ett varmt och levande utseende – även för spisar.", icon: <Paintbrush className="text-orange-600" /> },
-    { title: "Nybyggnation & Attefallshus", desc: "Vi bygger moderna hus och nyckelfärdiga Attefallshus med fokus på kvalitet och trygghet.", icon: <Home className="text-orange-600" /> },
+    { title: "Badrumsrenovering", desc: "Vi skapar moderna och hållbara badrum med certifierade hantverkare och fast prisoffert.", icon: <Droplets size={32} /> },
+    { title: "Köksrenovering", desc: "Få ett funktionellt och stilrent kök, skräddarsytt efter dina behov och önskemål.", icon: <Utensils size={32} /> },
+    { title: "Väggarbeten", desc: "Vi bygger, renoverar och putsar väggar för att ge ditt hem rätt form, stil och finish.", icon: <BrickWall size={32} /> },
+    { title: "Bygga altan & terrass", desc: "Vi designar och bygger altaner som förvandlar din uteplats till ett stilfullt extra vardagsrum.", icon: <TreePine size={32} /> },
+    { title: "Lerputs", desc: "Naturlig skönhet med lerputs. Ge dina väggar ett varmt och levande utseende – även för spisar.", icon: <Paintbrush size={32} /> },
+    { title: "Nybyggnation & Attefallshus", desc: "Vi bygger moderna hus och nyckelfärdiga Attefallshus med fokus på kvalitet och trygghet.", icon: <Home size={32} /> },
   ];
 
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="min-h-screen bg-white text-slate-900 font-sans">
 
       {/* HERO SECTION */}
-      <section className="relative h-[90vh] flex items-center justify-center text-white">
+      <section className="relative h-[85vh] flex items-center justify-center text-white">
         <div className="absolute inset-0 z-0">
           <Image
             src="/construction-bg.jpg"
@@ -42,7 +41,7 @@ export default function LandingPage() {
             Vi utför allt från badrums- och köksrenovering till altanbyggen, tillbyggnader och nybyggnation.
             Våra certifierade hantverkare levererar kvalitet i Stockholm med omnejd.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 text-center">
             <a href="#contact" className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-lg">
               Offertförfrågan
             </a>
@@ -73,7 +72,7 @@ export default function LandingPage() {
           {services.map((s, i) => (
             <div key={i} className="p-8 border border-slate-100 rounded-2xl hover:shadow-xl transition duration-300 bg-white group">
               <div className="mb-4 p-3 bg-orange-50 w-fit rounded-lg group-hover:bg-orange-600 group-hover:text-white transition">
-                {React.cloneElement(s.icon as React.ReactElement, { size: 32, className: "group-hover:text-white" })}
+                {s.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{s.title}</h3>
               <p className="text-slate-600 leading-relaxed">{s.desc}</p>
@@ -82,9 +81,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* WHY US - 3 COLUMNS */}
+      {/* WHY US */}
       <section className="bg-slate-900 text-white py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
           <div>
             <h3 className="text-2xl font-bold mb-4 text-orange-500">Kvalitet</h3>
             <p className="text-slate-400">Vi säkerställer kvalitet genom noggrannhet, professionalism och skräddarsydda lösningar som uppfyller dina unika behov.</p>
@@ -100,37 +99,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* DEEP DIVE TEXT SECTION */}
-      <section className="py-24 px-6 max-w-4xl mx-auto leading-relaxed">
-        <h2 className="text-3xl font-bold mb-6">Bygg & Renovering i Stockholm med omnejd</h2>
-        <p className="text-lg text-slate-700 mb-8">
-          Att bygga om eller renovera sitt hem är ett av de största projekten man kan ta sig an.
-          <strong> Bygger och Renoverar</strong> är en erfaren byggfirma som hjälper privatpersoner och företag
-          i Stockholm att förverkliga sina byggdrömmar med kvalitet och trygghet.
-        </p>
-
-        <div className="bg-orange-50 p-8 rounded-2xl border-l-4 border-orange-600 mb-12">
-          <h3 className="text-xl font-bold mb-4 italic">Helhetsansvar från idé till färdigt resultat</h3>
-          <p>Vi arbetar som totalentreprenör. Det betyder att du har <strong>en kontaktperson</strong> och en tydlig tidsplan, oavsett projektets storlek.</p>
-        </div>
-
-        <h3 className="text-2xl font-bold mb-6 text-center">Vårt arbetssätt i fem steg</h3>
-        <div className="space-y-4 mb-16">
-          {[
-            "Kostnadsfri rådgivning – vi besöker platsen och diskuterar stil och material.",
-            "Detaljerad offert – transparent kostnadsberäkning utan dolda avgifter.",
-            "Noggrann planering – ritningar, materialplan och bygglovshandlingar.",
-            "Utförande med kvalitet – certifierade hantverkare enligt svenska standarder.",
-            "Slutbesiktning och garanti – vi avslutar först när du är helt nöjd."
-          ].map((step, i) => (
-            <div key={i} className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-              <span className="bg-orange-600 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">{i + 1}</span>
-              <p className="font-medium">{step}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* CONTACT SECTION */}
       <section id="contact" className="py-24 bg-slate-50 px-6">
         <div className="max-w-6xl mx-auto">
@@ -140,17 +108,17 @@ export default function LandingPage() {
               <p className="mb-8 text-slate-400">Vi finns här för dig! Kontakta oss för en kostnadsfri offert eller rådgivning.</p>
 
               <div className="space-y-6">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 text-left">
                   <div className="p-3 bg-orange-600 rounded-full"><Phone size={24} /></div>
                   <div>
-                    <p className="text-sm text-slate-400">Aliaksei Patonich</p>
+                    <p className="text-sm text-slate-400 font-bold uppercase tracking-tighter">Aliaksei Patonich</p>
                     <a href="tel:0708399749" className="text-xl font-bold hover:text-orange-500 transition">070-839 97 49</a>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 text-left">
                   <div className="p-3 bg-orange-600 rounded-full"><Mail size={24} /></div>
                   <div>
-                    <p className="text-sm text-slate-400">E-post</p>
+                    <p className="text-sm text-slate-400 font-bold uppercase tracking-tighter">E-post</p>
                     <a href="mailto:info@byggochrenoverar.se" className="text-xl font-bold hover:text-orange-500 transition">info@byggochrenoverar.se</a>
                   </div>
                 </div>
@@ -163,7 +131,7 @@ export default function LandingPage() {
                 <input type="text" placeholder="Namn" className="w-full p-4 bg-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-600" />
                 <input type="email" placeholder="E-post" className="w-full p-4 bg-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-600" />
                 <textarea placeholder="Beskriv ditt projekt..." rows={4} className="w-full p-4 bg-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-600"></textarea>
-                <button className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl transition shadow-lg">Skicka förfrågan</button>
+                <button type="button" className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl transition shadow-lg">Skicka förfrågan</button>
               </form>
             </div>
           </div>
