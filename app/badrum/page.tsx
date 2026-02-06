@@ -147,7 +147,7 @@ export default function BadrumPage() {
             {/* FOOTER - Matchar Altan-stilen */}
             <footer className="py-12 bg-slate-50 text-center border-t">
                 <p className="text-sm font-bold uppercase tracking-widest text-slate-400">
-                    Bygger och Renoverar Stockholm – 070-839 97 49
+                    Bygger och Renoverar Stockholm – 079-018 71 24
                 </p>
             </footer>
         </main>

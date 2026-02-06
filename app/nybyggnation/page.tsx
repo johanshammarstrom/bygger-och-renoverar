@@ -137,7 +137,7 @@ export default function ConstructionPage() {
             <footer id="contact" className="py-20 bg-slate-50 text-center">
                 <h2 className="text-3xl font-bold mb-8">Redo att ta första steget?</h2>
                 <a href="tel:0708399749" className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-slate-800 transition">
-                    <Phone size={20} /> Kontakta Aliaksei på 070-839 97 49
+                    <Phone size={20} /> Kontakta Aliaksei på 079-018 71 24
                 </a>
             </footer>
         </main>
