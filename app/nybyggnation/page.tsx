@@ -82,16 +82,25 @@ export default function ConstructionPage() {
                 </div>
             </section>
 
-            {/* PROCESS */}
-            <section className="py-24 bg-slate-900 text-white px-6">
-                <div className="max-w-7xl mx-auto text-left">
-                    <h2 className="text-3xl font-bold mb-16 text-center">Nybyggnation av hus – Steg för steg</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {/* PROCESS - NY DESIGN (Matchar Altan-sidan) */}
+            <section className="py-24 bg-slate-50 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <h2 className="text-3xl font-bold mb-16 text-center italic text-slate-900">
+                        Nybyggnation av hus – steg för steg
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {steps.map((step, i) => (
-                            <div key={i} className="relative group">
-                                <div className="text-5xl font-black text-white/10 absolute -top-8 -left-2">0{i + 1}</div>
-                                <h3 className="text-xl font-bold mb-4 text-orange-500 relative z-10">{step.title}</h3>
-                                <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
+                            <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-left transition hover:shadow-md">
+                                {/* Rund orange siffra som på Altan-sidan */}
+                                <div className="w-10 h-10 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold mb-4">
+                                    {i + 1}
+                                </div>
+                                <h3 className="font-bold text-lg mb-2 text-slate-900 uppercase tracking-tight">
+                                    {step.title}
+                                </h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    {step.desc}
+                                </p>
                             </div>
                         ))}
                     </div>
