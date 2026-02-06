@@ -106,7 +106,7 @@ export default function LandingPage() {
               </div>
               <div>
                 <p className="text-xs text-slate-400 font-bold uppercase tracking-[0.2em] mb-1">Ring Aliaksei</p>
-                <a href="tel:0708399749" className="text-2xl font-bold hover:text-orange-500 transition">070-839 97 49</a>
+                <a href="tel:0708399749" className="text-2xl font-bold hover:text-orange-500 transition">079-018 71 24</a>
               </div>
             </div>
 

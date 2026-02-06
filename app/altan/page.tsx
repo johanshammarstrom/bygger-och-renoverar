@@ -175,7 +175,7 @@ export default function AltanPage() {
                 <h2 className="text-4xl font-black mb-10 uppercase tracking-tighter italic">Få din altanoffert idag</h2>
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
                     <a href="tel:0708399749" className="flex items-center justify-center gap-3 bg-orange-600 text-white px-10 py-5 rounded-full font-bold hover:bg-orange-700 transition shadow-xl hover:-translate-y-1">
-                        <Phone size={22} /> 070-839 97 49
+                        <Phone size={22} /> 079-018 71 24
                     </a>
                     <a href="mailto:info@byggochrenoverar.se" className="flex items-center justify-center gap-3 border-2 border-slate-900 px-10 py-5 rounded-full font-bold hover:bg-slate-900 hover:text-white transition hover:-translate-y-1">
                         <Mail size={22} /> Skicka e-post
