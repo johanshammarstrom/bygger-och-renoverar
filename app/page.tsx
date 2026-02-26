@@ -8,14 +8,15 @@ import ContactForm from './components/ContactForm';
 import {
   Phone, Mail, CheckCircle, ShieldCheck,
   Droplets, Utensils, Home, TreePine
-} from 'lucide-react'; // Korrigerat från lucide-center
+} from 'lucide-react';
 
 export default function LandingPage() {
+  // Uppdaterad lista för att undvika TypeScript-fel vid deploy
   const services = [
-    { title: "Badrumsrenovering", desc: "Vi skapar moderna och hållbara badrum med certifierade hantverkare och fast prisoffert.", icon: <Droplets size={32} /> },
-    { title: "Köksrenovering", desc: "Få ett funktionellt och stilrent kök, skräddarsytt efter dina behov och önskemål.", icon: <Utensils size={32} /> },
-    { title: "Bygga altan & terrass", desc: "Vi designar och bygger altaner som förvandlar din uteplats till ett stilfullt extra vardagsrum.", icon: <TreePine size={32} /> },
-    { title: "Nybyggnation & Attefallshus", desc: "Vi bygger moderna hus och nyckelfärdiga Attefallshus med fokus på kvalitet och trygghet.", icon: <Home size={32} /> },
+    { title: "Badrumsrenovering", desc: "Vi skapar moderna och hållbara badrum med certifierade hantverkare och fast prisoffert.", icon: Droplets, href: "/badrum" },
+    { title: "Köksrenovering", desc: "Få ett funktionellt och stilrent kök, skräddarsytt efter dina behov och önskemål.", icon: Utensils, href: "/kok" },
+    { title: "Bygga altan & terrass", desc: "Vi designar och bygger altaner som förvandlar din uteplats till ett stilfullt extra vardagsrum.", icon: TreePine, href: "/altan" },
+    { title: "Nybyggnation & Attefallshus", desc: "Vi bygger moderna hus och nyckelfärdiga Attefallshus med fokus på kvalitet och trygghet.", icon: Home, href: "/nybyggnation" },
   ];
 
   return (
@@ -74,28 +75,20 @@ export default function LandingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          {services.map((s, i) => {
-            let href = "";
-            if (s.title === "Nybyggnation & Attefallshus") href = "/nybyggnation";
-            if (s.title === "Bygga altan & terrass") href = "/altan";
-            if (s.title === "Badrumsrenovering") href = "/badrum";
-            if (s.title === "Köksrenovering") href = "/kok";
-
-            return (
-              <Link key={i} href={href}>
-                <div className="p-8 border border-slate-100 rounded-[2rem] hover:shadow-2xl transition duration-500 bg-white group h-full cursor-pointer relative overflow-hidden">
-                  <div className="mb-6 p-4 bg-orange-50 w-fit rounded-2xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                    {s.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 italic text-slate-800">{s.title}</h3>
-                  <p className="text-slate-500 leading-relaxed mb-6">{s.desc}</p>
-                  <span className="text-orange-600 text-sm font-black uppercase tracking-widest flex items-center gap-2 group-hover:translate-x-2 transition-transform">
-                    Läs mer <span className="text-xl">→</span>
-                  </span>
+          {services.map((s, i) => (
+            <Link key={i} href={s.href}>
+              <div className="p-8 border border-slate-100 rounded-[2rem] hover:shadow-2xl transition duration-500 bg-white group h-full cursor-pointer relative overflow-hidden">
+                <div className="mb-6 p-4 bg-orange-50 w-fit rounded-2xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                  <s.icon size={32} />
                 </div>
-              </Link>
-            );
-          })}
+                <h3 className="text-2xl font-bold mb-3 italic text-slate-800">{s.title}</h3>
+                <p className="text-slate-500 leading-relaxed mb-6">{s.desc}</p>
+                <span className="text-orange-600 text-sm font-black uppercase tracking-widest flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                  Läs mer <span className="text-xl">→</span>
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
@@ -128,7 +121,7 @@ export default function LandingPage() {
               </div>
               <div>
                 <p className="text-xs text-slate-400 font-bold uppercase tracking-[0.2em] mb-1 text-left">Ring Aliaksei</p>
-                <a href="tel:0708399749" className="text-2xl font-bold hover:text-orange-500 transition tracking-tighter block text-left">070-839 97 49</a>
+                <a href="tel:0790187124" className="text-2xl font-bold hover:text-orange-500 transition tracking-tighter block text-left">079-018 71 24</a>
               </div>
             </div>
 

@@ -55,7 +55,7 @@ export default function Header() {
                         </Link>
                     ))}
                     <a href="tel:0708399749" className="bg-orange-600 text-white px-5 py-2 rounded-full font-bold flex items-center gap-2 hover:bg-orange-700 transition whitespace-nowrap">
-                        <Phone size={16} /> 070-839 97 49
+                        <Phone size={16} /> 079-018 71 24
                     </a>
                 </nav>
 
