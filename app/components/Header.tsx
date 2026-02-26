@@ -82,7 +82,7 @@ export default function Header() {
                             {link.name}
                         </Link>
                     ))}
-                    <a href="tel:0708399749" className="bg-orange-600 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2">
+                    <a href="tel:079-018 71 24" className="bg-orange-600 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2">
                         <Phone size={18} /> Ring oss
                     </a>
                 </div>
