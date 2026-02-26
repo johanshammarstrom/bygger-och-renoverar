@@ -94,7 +94,7 @@ export default function UpgradedLandingPage() {
 
               <div className="relative z-20 p-10 h-full flex flex-col justify-between">
                 <div className="p-4 bg-white w-fit rounded-2xl text-orange-600 shadow-sm group-hover:bg-transparent group-hover:text-white group-hover:border group-hover:border-white transition-all">
-                  {React.cloneElement(s.icon as React.ReactElement, { size: 32 })}
+                  {React.cloneElement(s.icon as React.ReactElement<any>, { size: 32 })}
                 </div>
 
                 <div>
