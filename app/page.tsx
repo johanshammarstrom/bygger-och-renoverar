@@ -3,184 +3,113 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import ScrollToTop from './components/ScrollToTop';
-import ContactForm from './components/ContactForm';
-import {
-  Phone, Mail, CheckCircle, ShieldCheck,
-  Droplets, Utensils, Home, TreePine
-} from 'lucide-react'; // Korrigerat från lucide-center
+import { motion } from 'framer-motion'; // För snygga animationer
+import { ArrowRight, Droplets, Utensils, Home, TreePine } from 'lucide-react';
 
-export default function LandingPage() {
+export default function UpgradedLandingPage() {
   const services = [
-    { title: "Badrumsrenovering", desc: "Vi skapar moderna och hållbara badrum med certifierade hantverkare och fast prisoffert.", icon: <Droplets size={32} /> },
-    { title: "Köksrenovering", desc: "Få ett funktionellt och stilrent kök, skräddarsytt efter dina behov och önskemål.", icon: <Utensils size={32} /> },
-    { title: "Bygga altan & terrass", desc: "Vi designar och bygger altaner som förvandlar din uteplats till ett stilfullt extra vardagsrum.", icon: <TreePine size={32} /> },
-    { title: "Nybyggnation & Attefallshus", desc: "Vi bygger moderna hus och nyckelfärdiga Attefallshus med fokus på kvalitet och trygghet.", icon: <Home size={32} /> },
+    { title: "Badrum", desc: "Certifierad lyx i våtrum.", icon: <Droplets />, size: "md:col-span-2", img: "/badrum-bg.jpg" },
+    { title: "Kök", desc: "Ditt hems hjärta, optimerat.", icon: <Utensils />, size: "md:col-span-1", img: "/kok-bg.jpg" },
+    { title: "Altan", desc: "Svensk sommar på din terrass.", icon: <TreePine />, size: "md:col-span-1", img: "/altan-bg.jpg" },
+    { title: "Nybygge", desc: "Från vision till verklighet.", icon: <Home />, size: "md:col-span-2", img: "/nybygge-bg.jpg" },
   ];
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 font-sans">
-      <ScrollToTop />
+    <main className="min-h-screen bg-white text-[#0f172a]">
 
-      {/* FLYTANDE HEADER MED LOGO */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+      {/* 1. MINIMALISTISK PREMIUM HEADER */}
+      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="relative h-10 w-48 transition hover:opacity-80">
-            <Link href="/">
-              <Image src="/logo.png" alt="Bygger och Renoverar Stockholm" fill className="object-contain" />
-            </Link>
+          <div className="font-black text-xl tracking-tighter italic">
+            S<span className="text-orange-600">.</span>RENOVERING
           </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-slate-600">
+          <nav className="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em]">
             <a href="#services" className="hover:text-orange-600 transition">Tjänster</a>
-            <a href="#about" className="hover:text-orange-600 transition">Varför oss?</a>
-            <a href="#contact" className="bg-orange-600 text-white px-6 py-2.5 rounded-full hover:bg-orange-700 transition shadow-md active:scale-95">
-              Få Offert
+            <a href="#about" className="hover:text-orange-600 transition">Om oss</a>
+            <a href="#contact" className="bg-orange-600 text-white px-8 py-3 rounded-full hover:bg-black transition shadow-lg shadow-orange-200">
+              Boka Offert
             </a>
           </nav>
         </div>
       </header>
 
-      {/* HERO SECTION */}
-      <section className="relative h-[85vh] flex items-center justify-center text-white">
-        <div className="absolute inset-0 z-0">
-          <Image src="/construction-bg.jpg" alt="Bygg Stockholm" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-slate-900/60" />
-        </div>
+      {/* 2. CINEMATIC HERO SECTION */}
+      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden">
+        <motion.div
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0 z-0"
+        >
+          <Image src="/construction-bg.jpg" alt="Bygg" fill className="object-cover" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/40 to-transparent" />
+        </motion.div>
 
-        <div className="relative z-10 max-w-5xl px-6 text-center mt-20">
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 italic tracking-tighter">
-            Bygg & Renovering i Stockholm
-          </h1>
-          <p className="text-xl text-slate-200 mb-8 max-w-2xl mx-auto italic text-balance">
-            Kvalitet, trygghet och personlig service för ditt nästa hemprojekt.
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-            <a href="#contact" className="bg-orange-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-700 transition shadow-xl active:scale-95">
-              Boka Offertförfrågan
-            </a>
-            <a href="#services" className="bg-white/10 backdrop-blur-sm border border-white/30 px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition">
-              Våra tjänster
-            </a>
-          </div>
+        <div className="relative z-10 max-w-7xl w-full px-6">
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="max-w-2xl"
+          >
+            <span className="text-orange-500 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">
+              Stockholms Ledande Entreprenad
+            </span>
+            <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 italic">
+              VI BYGGER <br /> <span className="text-orange-600">DRÖMMAR.</span>
+            </h1>
+            <p className="text-slate-300 text-lg mb-10 font-light leading-relaxed">
+              Vi kombinerar skandinavisk minimalism med kompromisslös kvalitet.
+              Totalentreprenad för dig som kräver det lilla extra.
+            </p>
+            <div className="flex gap-4">
+              <button className="bg-orange-600 text-white px-10 py-5 rounded-full font-bold hover:scale-105 transition transform active:scale-95">
+                Våra Projekt
+              </button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* SERVICES SECTION */}
-      <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 italic uppercase tracking-tighter text-slate-900">Våra Tjänster</h2>
-          <div className="w-24 h-1.5 bg-orange-600 mx-auto rounded-full"></div>
+      {/* 3. BENTO GRID SERVICES */}
+      <section id="services" className="py-32 px-6 max-w-7xl mx-auto">
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-6xl font-black italic tracking-tighter uppercase">Vad vi gör<span className="text-orange-600">.</span></h2>
+          <div className="h-1.5 w-20 bg-orange-600 mt-4" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          {services.map((s, i) => {
-            let href = "";
-            if (s.title === "Nybyggnation & Attefallshus") href = "/nybyggnation";
-            if (s.title === "Bygga altan & terrass") href = "/altan";
-            if (s.title === "Badrumsrenovering") href = "/badrum";
-            if (s.title === "Köksrenovering") href = "/kok";
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map((s, i) => (
+            <motion.div
+              whileHover={{ y: -10 }}
+              key={i}
+              className={`${s.size} group relative h-[400px] rounded-[2.5rem] overflow-hidden bg-slate-100`}
+            >
+              {/* Bakgrundsbild som syns vid hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute inset-0 bg-orange-600/80 mix-blend-multiply z-10" />
+                {/* Här lägger du s.img i en Image component */}
+                <div className="bg-slate-300 w-full h-full" />
+              </div>
 
-            return (
-              <Link key={i} href={href}>
-                <div className="p-8 border border-slate-100 rounded-[2rem] hover:shadow-2xl transition duration-500 bg-white group h-full cursor-pointer relative overflow-hidden">
-                  <div className="mb-6 p-4 bg-orange-50 w-fit rounded-2xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                    {s.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 italic text-slate-800">{s.title}</h3>
-                  <p className="text-slate-500 leading-relaxed mb-6">{s.desc}</p>
-                  <span className="text-orange-600 text-sm font-black uppercase tracking-widest flex items-center gap-2 group-hover:translate-x-2 transition-transform">
-                    Läs mer <span className="text-xl">→</span>
-                  </span>
+              <div className="relative z-20 p-10 h-full flex flex-col justify-between">
+                <div className="p-4 bg-white w-fit rounded-2xl text-orange-600 shadow-sm group-hover:bg-transparent group-hover:text-white group-hover:border group-hover:border-white transition-all">
+                  {React.cloneElement(s.icon as React.ReactElement, { size: 32 })}
                 </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
 
-      {/* INFO & CONTACT SUMMARY */}
-      <section id="about" className="py-20 bg-slate-900 text-white px-6 text-left">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 italic text-orange-500 uppercase tracking-tight">Varför välja oss?</h2>
-            <div className="space-y-6">
-              {[
-                "Certifierade hantverkare för alla moment",
-                "Fast pris och tydlig tidsplan",
-                "Totalentreprenad – vi sköter allt",
-                "Ansvarsförsäkring och lämnad garanti"
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-4 text-lg font-medium">
-                  <CheckCircle className="text-orange-500 shrink-0" size={24} />
-                  <span>{text}</span>
+                <div>
+                  <h3 className="text-3xl font-bold mb-2 group-hover:text-white transition-colors tracking-tight">{s.title}</h3>
+                  <p className="text-slate-500 group-hover:text-white/80 transition-colors mb-6 font-medium italic">{s.desc}</p>
+                  <Link href={`/${s.title.toLowerCase()}`} className="flex items-center gap-2 font-black uppercase text-[10px] tracking-widest text-orange-600 group-hover:text-white">
+                    Läs mer <ArrowRight size={14} />
+                  </Link>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-8 bg-white/5 p-10 rounded-[3rem] border border-white/10 shadow-inner">
-            <h3 className="text-2xl font-bold italic mb-4 uppercase tracking-tighter">Snabbkontakt</h3>
-
-            <div className="flex items-center gap-6">
-              <div className="p-4 bg-orange-600 rounded-2xl shadow-lg shadow-orange-600/20 transition hover:scale-105">
-                <Phone size={28} className="text-white" />
               </div>
-              <div>
-                <p className="text-xs text-slate-400 font-bold uppercase tracking-[0.2em] mb-1 text-left">Ring Aliaksei</p>
-                <a href="tel:0708399749" className="text-2xl font-bold hover:text-orange-500 transition tracking-tighter block text-left">070-839 97 49</a>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-6">
-              <div className="p-4 bg-orange-600 rounded-2xl shadow-lg shadow-orange-600/20 transition hover:scale-105">
-                <Mail size={28} className="text-white" />
-              </div>
-              <div>
-                <p className="text-xs text-slate-400 font-bold uppercase tracking-[0.2em] mb-1 text-left">Skicka förfrågan</p>
-                <a
-                  href="#contact"
-                  className="text-xl font-bold hover:text-orange-500 transition border-b border-transparent hover:border-orange-500 pb-1 italic block text-left"
-                >
-                  Öppna kontaktformulär
-                </a>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* CONTACT FORM */}
-      <section id="contact" className="py-32 bg-slate-50 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter italic text-slate-900 leading-none">
-            Boka en kostnadsfri offert
-          </h2>
-          <p className="text-slate-500 mb-16 text-lg max-w-2xl mx-auto italic leading-relaxed">
-            Vi kommer ut till dig i hela Stockholm, mäter och ger ett fast prisförslag.
-            Fyll i dina uppgifter nedan så hörs vi inom kort!
-          </p>
-
-          <ContactForm />
-
-          <div className="mt-16 flex flex-wrap justify-center gap-12 text-slate-400 font-black uppercase tracking-[0.2em] text-[10px]">
-            <div className="flex items-center gap-2 transition hover:text-orange-600"><ShieldCheck size={16} className="text-orange-500" /> Snabba svar</div>
-            <div className="flex items-center gap-2 transition hover:text-orange-600"><ShieldCheck size={16} className="text-orange-500" /> Kostnadsfritt besök</div>
-            <div className="flex items-center gap-2 transition hover:text-orange-600"><ShieldCheck size={16} className="text-orange-500" /> Fasta priser</div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="py-20 border-t bg-white flex flex-col items-center px-6">
-        <div className="relative h-14 w-56 mb-8 transition hover:scale-105 duration-300">
-          <Image src="/logo.png" alt="Logo" fill className="object-contain" />
-        </div>
-        <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.4em] text-center leading-relaxed opacity-60">
-          © 2026 Bygger och Renoverar Stockholm. <br className="md:hidden" />
-          Alla rättigheter förbehållna.
-        </p>
-      </footer>
     </main>
   );
 }
